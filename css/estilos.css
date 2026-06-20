@@ -1,0 +1,473 @@
+/* ==========================================================================
+   CONFIGURACIÓN GENERAL & VARIABLES DE DISEÑO PREMIUM (2026)
+   ========================================================================== */
+:root {
+    --sena-color: #39A900;
+    --sena-gradient-end: #297a00;
+    --sena-bright: #4cd600;
+    --dark-blue: #0f172a;
+    --dark-matte: #1e293b;
+    --light-bg: #f8fafc;
+    --light-card: #ffffff;
+    --text-primary: #334155;
+    --text-muted: #64748b;
+    
+    /* Sistema de sombras de alta fidelidad */
+    --shadow-soft: 0 4px 20px rgba(15, 23, 42, 0.04);
+    --shadow-premium: 0 12px 40px rgba(15, 23, 42, 0.08);
+    --shadow-hover: 0 20px 50px rgba(57, 169, 0, 0.15);
+    
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+}
+
+/* Espaciados modulares avanzados */
+.space-y-7 > * + * {
+    margin-top: 5.5rem !important;
+}
+
+.max-w-3xl { max-width: 48rem; }
+.max-w-5xl { max-width: 64rem; }
+.max-w-xl { max-width: 36rem; }
+.fw-extrabold { font-weight: 800; }
+.tracking-tight { letter-spacing: -0.03em; }
+.tracking-wider { letter-spacing: 0.08em; }
+.z-index-2 { position: relative; z-index: 2; }
+.uppercase { text-transform: uppercase; }
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN SIMÉTRICA Y CENTRADA
+   ========================================================================== */
+.custom-navbar {
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 1rem 0;
+    transition: var(--transition-smooth);
+}
+
+.custom-navbar .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-sena-bright {
+    color: var(--sena-bright);
+}
+
+.custom-navbar .navbar-brand {
+    font-size: 1.4rem;
+    margin-right: 0 !important;
+    display: inline-block;
+}
+
+.custom-navbar .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.custom-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.4rem 1.4rem !important;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.custom-navbar .nav-link:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ==========================================================================
+   HERO SECTION IMPACTANTE
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    background: url('../img/hero-bg.jpg') no-repeat center center/cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.98) 30%,
+        rgba(57, 169, 0, 0.25) 100%
+    );
+    z-index: 1;
+}
+
+.text-gradient-sena {
+    background: linear-gradient(135deg, #ffffff 0%, var(--sena-bright) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.badge-sena-pill {
+    background: rgba(57, 169, 0, 0.15);
+    border: 1px solid rgba(76, 214, 0, 0.4);
+    color: var(--sena-bright);
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    border-radius: 100px;
+    font-weight: 700;
+}
+
+/* Indicador de Mouse */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.scroll-indicator .mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    position: relative;
+}
+
+.scroll-indicator .wheel {
+    width: 4px;
+    height: 8px;
+    background-color: white;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-anim 1.6s infinite ease-in-out;
+}
+
+@keyframes scroll-anim {
+    0% { top: 8px; opacity: 1; }
+    100% { top: 22px; opacity: 0; }
+}
+
+/* ==========================================================================
+   BOTONES E INTERACCIONES
+   ========================================================================== */
+.btn-sena-premium {
+    background: linear-gradient(135deg, var(--sena-color), var(--sena-gradient-end));
+    color: white !important;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 8px 24px rgba(57, 169, 0, 0.3);
+    transition: var(--transition-smooth);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-sena-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    background: linear-gradient(135deg, var(--sena-bright), var(--sena-color));
+}
+
+/* ==========================================================================
+   OVERLAP DE ESTADÍSTICAS
+   ========================================================================== */
+.stats-overlap-container {
+    margin-top: -60px;
+    z-index: 10;
+}
+
+.stats-card-wrapper {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-premium);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.text-sena {
+    color: var(--sena-color) !important;
+}
+
+/* ==========================================================================
+   TARJETAS INFORMATIVAS & SECCIONES
+   ========================================================================== */
+.text-dark-blue { color: var(--dark-blue); }
+.text-secondary-custom { color: var(--text-primary); }
+.text-muted-custom { color: var(--text-muted); }
+
+.info-card {
+    background-color: var(--light-card);
+    border-left: 6px solid var(--sena-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+}
+
+.info-card:hover {
+    box-shadow: var(--shadow-premium);
+    transform: translateY(-4px);
+}
+
+.bg-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.border-custom {
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+.side-accent-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--sena-color);
+}
+
+.animated-icon {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.accent-line {
+    width: 60px;
+    height: 4px;
+    background: var(--sena-color);
+    border-radius: 2px;
+    margin-top: 1rem;
+}
+
+/* ==========================================================================
+   BLOQUE DE CATEGORÍAS DE TALENTOS
+   ========================================================================== */
+.premium-card {
+    background: white;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    border-radius: 20px !important;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+.premium-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-premium);
+}
+
+.border-top-sena {
+    border-top: 5px solid var(--sena-color) !important;
+}
+
+.border-start-sena-thick {
+    border-left: 6px solid var(--sena-color) !important;
+}
+
+.category-icon-box {
+    width: 46px;
+    height: 46px;
+    background: var(--light-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.list-talentos li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   SECCIÓN JURADOS (MODO OSCURO PREMIUM)
+   ========================================================================== */
+.bg-dark-matte {
+    background-color: var(--dark-blue);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-jurado {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    transition: var(--transition-smooth);
+}
+
+.card-jurado:hover {
+    background: rgba(57, 169, 0, 0.08);
+    border-color: var(--sena-color);
+    transform: scale(1.03);
+}
+
+.badge-jurado-category {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   GRID DE IMÁGENES OPTIMIZADO DE ALTA DENSIDAD (Para las 85 fotos)
+   ========================================================================== */
+.optimized-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.gallery-img-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: #e2e8f0;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    transition: var(--transition-smooth);
+}
+
+.gallery-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+/* Efectos hover elegantes e interactivos para cada una de las 85 imágenes */
+.gallery-img-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    border-color: rgba(57, 169, 0, 0.3);
+}
+
+.gallery-img-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.05);
+}
+
+/* ==========================================================================
+   SECCIÓN ENTREVISTAS & TESTIMONIALES
+   ========================================================================== */
+.bg-light-section {
+    background: #f1f5f9;
+}
+
+.card-testimonial {
+    position: relative;
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    transition: var(--transition-smooth);
+}
+
+.quote-mark {
+    font-family: serif;
+    font-size: 4rem;
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    opacity: 0.15;
+}
+
+/* ==========================================================================
+   FOOTER CON DEGRADADO REFLEJO
+   ========================================================================== */
+footer {
+    background-color: var(--dark-blue);
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(57,169,0,0.1) 0%, rgba(0,0,0,0) 70%);
+}
+
+/* ==========================================================================
+   ANIMACIONES ON-SCROLL (REVEAL SYSTEM)
+   ========================================================================== */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   ADAPTABILIDAD RESPONSIVE REFINADA
+   ========================================================================== */
+@media (max-width: 991px) {
+    .custom-navbar .navbar-nav {
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+    .optimized-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .space-y-7 > * + * {
+        margin-top: 3.5rem !important;
+    }
+    .hero-section h1 {
+        font-size: 2.4rem !important;
+    }
+}
